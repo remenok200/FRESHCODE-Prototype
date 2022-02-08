@@ -34,16 +34,16 @@ function Car(
     releaseYear === undefined ||
     color === "" ||
     speed === undefined ||
-    speed === NaN ||
+    //isNaN(speed) === true ||
     speed < 0 ||
     maxSpeed === undefined ||
-    maxSpeed === NaN ||
+    //isNaN(maxSpeed) === true ||
     maxSpeed < 0 ||
     fuelConsumption === undefined ||
-    fuelConsumption === NaN ||
+    //isNaN(fuelConsumption) === true ||
     fuelConsumption < 0 ||
     volume === undefined ||
-    volume === NaN ||
+    isNaN(volume + fuelConsumption + maxSpeed + speed) === true ||
     volume < 0
   ) {
     throw new Error(
