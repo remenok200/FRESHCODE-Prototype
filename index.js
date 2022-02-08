@@ -50,6 +50,11 @@ function Car(
       "Поля не могут быть пустыми или не определенными, кроме того, числа не могут быть отрицательными. Проверяйте, что вводите!"
     );
   }
+  if (speed > maxSpeed) {
+    throw new RangeError(
+      "Скорость ну никак не может быть больше максимальной!"
+    );
+  }
 
   this.manufacturer = manufacturer;
   this.model = model;
@@ -121,6 +126,7 @@ console.log(toyota);
 console.log(lexus);
 console.log(bmw);
 
+const testMachine4 = new Car("Toyota", "Prius", "white", "2018", 300, 160, 1, 60); // вернет ошибку
 const testMachine3 = new Car("", "LX-15", "yellow", "2019", 38.5, 195, 2, 69); // вернет ошибку
 const testMachine2 = new Car("BMW", "X5", "black", "2016", 70, 250, 3, -5); // вернет ошибку
 const testMachine1 = new Car(100, "Prius", "white", "2018", 20, 160, 1, 60); // вернет ошибку
